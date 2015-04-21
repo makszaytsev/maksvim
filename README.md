@@ -1,2 +1,2 @@
 # maksvim
-vim files
+my vim files with bundle
