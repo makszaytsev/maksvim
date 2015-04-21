@@ -1,0 +1,18 @@
+[submodule "bundle/vundle"]
+	path = bundle/vundle
+	url = https://github.com/gmarik/vundle.git
+[submodule "bundle/Atom"]
+	path = bundle/Atom
+	url = https://github.com/zaiste/Atom.git
+[submodule "bundle/easybuffer.vim"]
+	path = bundle/easybuffer.vim
+	url = https://github.com/troydm/easybuffer.vim.git
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "bundle/badwolf"]
+	path = bundle/badwolf
+	url = https://github.com/sjl/badwolf.git
+[submodule "bundle/molokai"]
+	path = bundle/molokai
+	url = https://github.com/tomasr/molokai.git
