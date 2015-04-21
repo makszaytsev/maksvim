@@ -12,11 +12,14 @@ call vundle#rc(s:bundle_path)
 Plugin 'gmarik/vundle'
 "
 "others packages
+Plugin 'vim-scripts/taglist.vim'
+Plugin 'vim-scripts/fugitive.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'troydm/easybuffer.vim'
 Plugin 'sjl/badwolf'
 Plugin 'tomasr/molokai'
 Plugin 'zaiste/Atom'
+Plugin 'maxbrunsfeld/vim-yankstack'
 "
 "general settings
 filetype plugin indent on
@@ -26,8 +29,14 @@ syntax on
 "change dir to current file
 nnoremap <silent> <F2> :lchdir %:p:h<CR>:pwd<CR>
 nmap <tab> :NERDTreeToggle<cr>
+"Folding
 nnoremap <space> za
 vnoremap <space> za
+"EasyBuffer plugin
+nmap <leader>be :EasyBufferToggle<cr>
+"Yank stack
+nmap <leader>p <Plug>yankstack_substitute_older_paste
+nmap <leader>P <Plug>yankstack_substitute_newer_paste
 "
 "settings
 colorscheme torte 

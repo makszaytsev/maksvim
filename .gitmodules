@@ -16,3 +16,15 @@
 [submodule "bundle/molokai"]
 	path = bundle/molokai
 	url = https://github.com/tomasr/molokai.git
+[submodule "bundle/taglist.vim"]
+	path = bundle/taglist.vim
+	url = https://github.com/vim-scripts/taglist.vim.git
+[submodule "bundle/signal_dec_VHDL"]
+	path = bundle/signal_dec_VHDL
+	url = https://github.com/vim-scripts/signal_dec_VHDL.git
+[submodule "bundle/fugitive.vim"]
+	path = bundle/fugitive.vim
+	url = https://github.com/vim-scripts/fugitive.vim.git
+[submodule "bundle/vim-yankstack"]
+	path = bundle/vim-yankstack
+	url = https://github.com/maxbrunsfeld/vim-yankstack.git
