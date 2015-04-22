@@ -47,8 +47,9 @@ nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
 "
 "settings
-colorscheme torte 
+colorscheme torte
 set guioptions-=T
+set wildmenu
 set backspace=indent,eol,start
 set binary
 set noeol
@@ -78,4 +79,3 @@ let NERDTreeQuitOnOpen=1
 let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=1
 let NERDTreeDirArrows=1
-
