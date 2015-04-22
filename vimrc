@@ -47,7 +47,7 @@ nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
 "
 "settings
-colorscheme torte
+colorscheme molokai
 set guioptions-=T
 set wildmenu
 set backspace=indent,eol,start
@@ -57,7 +57,8 @@ set completeopt=longest,menuone,preview
 set encoding=utf-8
 set list
 "set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:␣
-set listchars=tab:->,eol:¬,trail:␣
+"set listchars=tab:..,eol:¬,trail:␣
+set listchars=tab:..,trail:␣
 set textwidth=100
 set nowrap
 set nobackup
@@ -71,6 +72,7 @@ set incsearch
 set showmatch
 set matchtime=2
 set hlsearch
+noremap <leader><space> :noh<cr>:call clearmatches()<cr>
 
 set showcmd
 set visualbell
@@ -79,3 +81,11 @@ let NERDTreeQuitOnOpen=1
 let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=1
 let NERDTreeDirArrows=1
+"Syntatic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
