@@ -15,11 +15,19 @@ Plugin 'gmarik/vundle'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'vim-scripts/fugitive.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'troydm/easybuffer.vim'
+"color schemes
 Plugin 'sjl/badwolf'
 Plugin 'tomasr/molokai'
 Plugin 'zaiste/Atom'
 Plugin 'maxbrunsfeld/vim-yankstack'
+Plugin 'jlanzarotta/bufexplorer'
+Plugin 'bling/vim-airline'
+Plugin 'bling/vim-bufferline'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'szw/vimctrlspace'
+Plugin 'terryma/vim-multiple-cursors'
 "
 "general settings
 filetype plugin indent on
@@ -33,7 +41,7 @@ nmap <tab> :NERDTreeToggle<cr>
 nnoremap <space> za
 vnoremap <space> za
 "EasyBuffer plugin
-nmap <leader>be :EasyBufferToggle<cr>
+"nmap <leader>be :EasyBufferToggle<cr>
 "Yank stack
 nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
@@ -44,7 +52,7 @@ set guioptions-=T
 set backspace=indent,eol,start
 set binary
 set noeol
-set completeopt=menuone,preview
+set completeopt=longest,menuone,preview
 set encoding=utf-8
 set list
 "set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:␣
