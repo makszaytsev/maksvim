@@ -19,6 +19,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'sjl/badwolf'
 Plugin 'tomasr/molokai'
 Plugin 'zaiste/Atom'
+"
 Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'bling/vim-airline'
@@ -28,6 +29,12 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'szw/vimctrlspace'
 Plugin 'terryma/vim-multiple-cursors'
+"
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+"Plugin 'sjl/splice'
 "
 "general settings
 filetype plugin indent on
@@ -45,6 +52,8 @@ vnoremap <space> za
 "Yank stack
 nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
+" used in vhdl
+vnoremap <C-r> :s/\%V:.*$/=> ,/g<CR>
 "
 "settings
 colorscheme molokai
@@ -72,8 +81,14 @@ set incsearch
 set showmatch
 set matchtime=2
 set hlsearch
-noremap <leader><space> :noh<cr>:call clearmatches()<cr>
-
+"noremap <esc> :noh<cr>:call clearmatches()<cr>:<esc><cr>
+"nmap <esc> :noh<cr><esc>
+noremap <leader><esc> :noh<cr>call clearmatches()<cr>
+"airline
+let g:airline#extensions#branch#enabled = 1
+"statusline
+"set statusline=%<\ %f\ %{fugitive#statusline()}
+"
 set showcmd
 set visualbell
 "NERDTree
@@ -82,10 +97,16 @@ let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=1
 let NERDTreeDirArrows=1
 "Syntatic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+"bufferline
+let g:bufferline_echo = 0
+autocmd VimEnter *
+  \ let &statusline='%{bufferline#refresh_status()}'
+    \ .bufferline#get_status_string()
+
