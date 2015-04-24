@@ -41,6 +41,9 @@ filetype plugin indent on
 syntax on
 "
 "Mappings
+" change leader
+let mapleader = ","
+let maplocalleader = "\\"
 "change dir to current file
 nnoremap <silent> <F2> :lchdir %:p:h<CR>:pwd<CR>
 nmap <tab> :NERDTreeToggle<cr>
