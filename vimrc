@@ -47,11 +47,12 @@ let maplocalleader = "\\"
 "change dir to current file
 nnoremap <silent> <F2> :lchdir %:p:h<CR>:pwd<CR>
 nmap <tab> :NERDTreeToggle<cr>
+"buffers navigation
+nmap <leader>] :bnext<cr>
+nmap <leader>[ :bprevious<cr>
 "Folding
 nnoremap <space> za
 vnoremap <space> za
-"EasyBuffer plugin
-"nmap <leader>be :EasyBufferToggle<cr>
 "Yank stack
 nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
@@ -68,6 +69,8 @@ set noeol
 set completeopt=longest,menuone,preview
 set encoding=utf-8
 set list
+" always show status line
+set laststatus=2
 "set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:␣
 "set listchars=tab:..,eol:¬,trail:␣
 set listchars=tab:..,trail:␣
