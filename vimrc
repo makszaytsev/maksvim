@@ -66,7 +66,7 @@ set wildmenu
 set backspace=indent,eol,start
 set binary
 set noeol
-set completeopt=longest,menuone,preview
+set completeopt=menu
 set encoding=utf-8
 set list
 " always show status line
