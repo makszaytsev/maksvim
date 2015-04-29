@@ -14,6 +14,7 @@ Plugin 'gmarik/vundle'
 "others packages
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'vim-scripts/fugitive.vim'
+Plugin 'vim-scripts/cygwin_utils.vim'
 Plugin 'scrooloose/nerdtree'
 "color schemes
 Plugin 'sjl/badwolf'
@@ -27,7 +28,7 @@ Plugin 'bling/vim-bufferline'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
-Plugin 'szw/vimctrlspace'
+"Plugin 'szw/vimctrlspace'
 Plugin 'terryma/vim-multiple-cursors'
 "
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -48,8 +49,8 @@ let maplocalleader = "\\"
 nnoremap <silent> <F2> :lchdir %:p:h<CR>:pwd<CR>
 nmap <tab> :NERDTreeToggle<cr>
 "buffers navigation
-nmap <leader>] :bnext<cr>
-nmap <leader>[ :bprevious<cr>
+nmap <leader>j :bnext<cr>
+nmap <leader>k :bprevious<cr>
 "Folding
 nnoremap <space> za
 vnoremap <space> za

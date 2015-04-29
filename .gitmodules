@@ -55,3 +55,9 @@
 [submodule "bundle/vim-snippets"]
 	path = bundle/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
+[submodule "bundle/cygwin_utils.vim"]
+	path = bundle/cygwin_utils.vim
+	url = https://github.com/vim-scripts/cygwin_utils.vim.git
+[submodule "bundle/hdl_plugin"]
+	path = bundle/hdl_plugin
+	url = https://github.com/vim-scripts/hdl_plugin.git
