@@ -1,4 +1,4 @@
-"Vundle init
+"Vundle init {{{
 "
 set nocompatible
 filetype on
@@ -7,7 +7,7 @@ let s:dotvim = fnamemodify(globpath(&rtp, 'maksvim.dir'), ':p:h')
 let s:bundle_path=s:dotvim."/bundle/"
 execute "set rtp+=".s:bundle_path."vundle"
 call vundle#rc(s:bundle_path)
-"
+" }}}
 "vundle package
 Plugin 'gmarik/vundle'
 "
@@ -45,23 +45,29 @@ syntax on
 " change leader
 let mapleader = ","
 let maplocalleader = "\\"
+"edit vimrc
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>efv :e $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
 "change dir to current file
 nnoremap <silent> <F2> :lchdir %:p:h<CR>:pwd<CR>
 nmap <tab> :NERDTreeToggle<cr>
 "buffers navigation
-nmap <leader>j :bnext<cr>
-nmap <leader>k :bprevious<cr>
+nmap <leader>bn :bnext<cr>
+nmap <leader>bp :bprevious<cr>
+nmap <leader>bd :bd<cr>
 "Folding
 nnoremap <space> za
 vnoremap <space> za
 "Yank stack
 nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
-" used in vhdl
-vnoremap <C-r> :s/\%V:.*$/=> ,/g<CR>
 "
+nnoremap / /\v
+vnoremap / /\v
+
 "settings
-colorscheme molokai
+colorscheme atom
 set guioptions-=T
 set wildmenu
 set backspace=indent,eol,start
@@ -83,9 +89,11 @@ set noswapfile
 set expandtab
 set tabstop=2
 set shiftwidth=2
+set shiftround
 "searching
 set incsearch
 set showmatch
+set gdefault
 set matchtime=2
 set hlsearch
 "noremap <esc> :noh<cr>:call clearmatches()<cr>:<esc><cr>
@@ -117,3 +125,9 @@ autocmd VimEnter *
   \ let &statusline='%{bufferline#refresh_status()}'
     \ .bufferline#get_status_string()
 
+"Vimscript file settings ----------------------- {{{
+augroup filetype_vim
+  autocmd!
+  autocmd FileType vim setlocal foldmethod=marker
+augroup END
+" }}}
