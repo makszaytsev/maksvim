@@ -1,10 +1,18 @@
 
-command ModSimComp : call Modelsim_compile()
+"autocmd FileType vhdl nnoremap <localleader>c :call Modelsim_compile()<qr>
 
-function Modelsim_compile()
-  set makeprg=vcom\ -work\ work\ %
-  execute "make"
-  execute "cw"
+command! ModSimComp : call Modelsim_compile()
+
+let modelsim_project_dir="modelsim_project.dir"
+
+function! Modelsim_compile()
+"  set makeprg=vcom\ -work\ work\ %
+"  execute "make"
+"  execute "cw"
+  e modelsim_project.dir 
+  exe "normal! B"
+  echom expand("<cWORD>")
+  bd!
 endfunction
 
 "set error format 
