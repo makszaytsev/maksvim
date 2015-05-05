@@ -3,16 +3,10 @@
 
 command! ModSimComp : call Modelsim_compile()
 
-let modelsim_project_dir="modelsim_project.dir"
-
 function! Modelsim_compile()
-"  set makeprg=vcom\ -work\ work\ %
-"  execute "make"
-"  execute "cw"
-  e modelsim_project.dir 
-  exe "normal! B"
-  echom expand("<cWORD>")
-  bd!
+  set makeprg=vcom\ -work\ work\ $*
+  exe "make " . fnameescape(system("cygpath -w ". expand("%")))
+  exe "cw"
 endfunction
 
 "set error format 
