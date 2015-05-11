@@ -5,14 +5,13 @@ command! ModSimComp : call Modelsim_compile()
 
 function! Modelsim_compile()
   set makeprg=vcom\ -work\ work\ $*
-  exe "make " . fnameescape(system("cygpath -w ". expand("%"))) 
-  exe "normal! \<cr>"
+  exe "w"
+  exe "make " . fnameescape(system("cygpath -w ". expand("%")))
   "exe "cw"
 endfunction
-
-"set error format 
-"set errorformat=\*\*\ %tRROR:\ %f(%l):\ %m,\*\*\ %tRROR:\ %m,\*\*\ %tARNING:\ %m,\*\*\ %tOTE:\ %m,%tRROR:\ %f(%l):\ %m,%tARNING\[%*[0-9]\]:\ %f(%l):\ %m,%tRROR:\ %m,%tARNING\[%*[0-9]\]:\ %m
-setlocal errorformat=**\ Error:\ %f(%l):\ %m 
+-
+setlocal errorformat=\*\*\ %tRROR:\ %f(%l):\ %m,\*\*\ %tRROR:\ %m,\*\*\ %tARNING:\ %m,\*\*\ %tOTE:\ %m,%tRROR:\ %f(%l):\ %m,%tARNING\[%*[0-9]\]:\ %f(%l):\ %m,%tRROR:\ %m,%tARNING\[%*[0-9]\]:\ %m
+"setlocal errorformat=**\ Error:\ %f(%l):\ %m 
 
 "abbreviations
 autocmd FileType vhdl iabbrev dow downto

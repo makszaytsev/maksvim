@@ -40,6 +40,18 @@ Plugin 'honza/vim-snippets'
 "general settings
 filetype plugin indent on
 syntax on
+set shell=bash
+      " Shell arguments; -c: argument
+   set shellcmdflag=-c
+      " Shell redirect; copy stderr to stdout
+   set shellredir=>%s\ 2>&1
+      " Shell pipe; copy stderr to stdout
+   set shellpipe=2>&1\|\ tee
+      " Shell quote; embed command within quotes
+   "set shellxquote=\"
+set shell=bash
+set shellcmdflag=-c
+set shellslash
 "
 "Mappings
 " change leader
@@ -62,6 +74,9 @@ vnoremap <space> za
 "Yank stack
 nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
+"moving
+nmap <c-j> <c-d>M
+nmap <c-k> <c-u>M
 "
 nnoremap / /\v
 vnoremap / /\v
@@ -124,7 +139,10 @@ let g:bufferline_echo = 0
 autocmd VimEnter *
   \ let &statusline='%{bufferline#refresh_status()}'
     \ .bufferline#get_status_string()
+autocmd BufWritePre * %s/\v\s+$//ge
+autocmd BufRead * %s/\r//ge
 
+let g:gitgutter_max_signs=10000
 "Vimscript file settings ----------------------- {{{
 augroup filetype_vim
   autocmd!

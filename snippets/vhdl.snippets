@@ -75,9 +75,9 @@ snippet ent
 	    ${2:--I/O}
 	  );
 	end entity $1;
-	
+
 	architecture ${3:rtl} of $1 is
-	
+
 	begin
 	  ${4}
 	end $3;
@@ -96,7 +96,7 @@ snippet el
 	  ${1:--do something else};
 # library ieee
 snippet lib
-	library ieee;  
+	library ieee;
 	use ieee.${1:std_logic_1164}.all;
 	use ieee.${2:numeric_std}.all;${3}
 # Process (plain)
@@ -120,4 +120,9 @@ snippet td
 # Subtype Declaration
 snippet st
 	subtype ${1:identifier} is ${2:subtype indication};${3}
-#
+# record type snippet
+snippet rec
+	type ${1:enter_type_name} is record
+	  ${2:enter_name} : ${3:enter_type};
+	end record;
+
