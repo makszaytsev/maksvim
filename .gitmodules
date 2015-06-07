@@ -61,3 +61,6 @@
 [submodule "bundle/hdl_plugin"]
 	path = bundle/hdl_plugin
 	url = https://github.com/vim-scripts/hdl_plugin.git
+[submodule "bundle/VimDebug"]
+	path = bundle/VimDebug
+	url = https://github.com/vim-scripts/VimDebug.vim.git
