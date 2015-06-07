@@ -27,7 +27,7 @@ Plugin 'bling/vim-airline'
 Plugin 'bling/vim-bufferline'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
 "Plugin 'szw/vimctrlspace'
 Plugin 'terryma/vim-multiple-cursors'
 "
