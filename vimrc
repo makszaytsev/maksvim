@@ -15,6 +15,7 @@ Plugin 'gmarik/vundle'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'vim-scripts/fugitive.vim'
 Plugin 'vim-scripts/cygwin_utils.vim'
+Plugin 'vim-scripts/VimDebug.vim'
 Plugin 'scrooloose/nerdtree'
 "color schemes
 Plugin 'sjl/badwolf'
@@ -96,7 +97,7 @@ set laststatus=2
 "set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:␣
 "set listchars=tab:..,eol:¬,trail:␣
 set listchars=tab:..,trail:␣
-set textwidth=100
+set textwidth=0
 set nowrap
 set nobackup
 set nowritebackup
@@ -140,7 +141,7 @@ autocmd VimEnter *
   \ let &statusline='%{bufferline#refresh_status()}'
     \ .bufferline#get_status_string()
 autocmd BufWritePre * %s/\v\s+$//ge
-autocmd BufRead * %s/\r//ge
+"autocmd BufRead * %s/\r//ge
 
 let g:gitgutter_max_signs=10000
 "Vimscript file settings ----------------------- {{{
