@@ -1,0 +1,44 @@
+# comments
+snippet //
+	// ${1}
+	//
+#-------------------------------------------------------------------------------------------------
+snippet ////
+	//-----------------------------------------------------------------------------------------------
+	// ${1}
+	//-----------------------------------------------------------------------------------------------
+	//
+# always
+snippet al
+	always @( posedge ${1} ) begin
+	  ${2} <= ${3};
+	end
+
+# assign
+snippet as
+	assign  ${1} = ${2};
+
+# Case statement
+snippet case
+	case (${1:expression}) is
+	  ${2:choices} : begin
+	    ${3://sequential statement(s)};
+		end
+	  ${4:choice2} : begin
+	    ${5://sequential statement(s)};
+		end
+	endcase
+snippet if
+	if ( ${1:condition} ) begin
+	  ${2://do something};
+	end
+# Else if...
+snippet ei
+	else if ( ${1:condition} ) begin
+	  ${2://do something else};
+	end
+# Else
+snippet el
+	else begin
+	  ${1://do something else};
+	end
