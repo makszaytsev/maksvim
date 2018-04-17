@@ -14,6 +14,26 @@ snippet al
 	  ${2} <= ${3};
 	end
 
+# FSM1
+snippet fsm
+	always @( posedge ${1:Clk} ) begin
+		if ( ${2:Rst_I} )
+			${3:s_fsm} <= ${4:sIDLE};
+		else
+			$3 <= ${5:sn_fsm};
+	end
+
+	always @( $3, ) begin
+		$5 <= $3;
+
+		case ( $3 )
+			$4 : begin
+				$5 <= ${6:some_state};
+			end
+		endcase
+	end
+
+
 # assign
 snippet as
 	assign  ${1} = ${2};
@@ -28,6 +48,7 @@ snippet case
 	    ${5://sequential statement(s)};
 		end
 	endcase
+# If statement
 snippet if
 	if ( ${1:condition} ) begin
 	  ${2://do something};
