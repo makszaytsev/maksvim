@@ -81,6 +81,8 @@ nmap <c-k> <c-u>M
 "
 nnoremap / /\v
 vnoremap / /\v
+nmap <F3> i<C-R> =strftime("%d-%m-%Y %H:%M")<CR><Esc>
+imap <F3> <C-R> =strftime("%d-%m-%Y %H:%M")<CR>
 
 "settings
 colorscheme atom
@@ -112,6 +114,7 @@ set showmatch
 set gdefault
 set matchtime=2
 set hlsearch
+set colorcolumn=100
 "noremap <esc> :noh<cr>:call clearmatches()<cr>:<esc><cr>
 "nmap <esc> :noh<cr><esc>
 noremap <leader><esc> :noh<cr>call clearmatches()<cr>

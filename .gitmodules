@@ -64,3 +64,6 @@
 [submodule "bundle/VimDebug"]
 	path = bundle/VimDebug
 	url = https://github.com/vim-scripts/VimDebug.vim.git
+[submodule "bundle/vim-SystemVerilog"]
+	path = bundle/vim-SystemVerilog
+	url = https://github.com/WeiChungWu/vim-SystemVerilog.git

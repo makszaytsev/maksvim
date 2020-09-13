@@ -1,0 +1,65 @@
+# comments
+snippet //
+	// ${1}
+	//
+#-------------------------------------------------------------------------------------------------
+snippet ////
+	//-----------------------------------------------------------------------------------------------
+	// ${1}
+	//-----------------------------------------------------------------------------------------------
+	//
+# always
+snippet al
+	always_ff @( posedge ${1} ) begin
+	  ${2} <= ${3};
+	end
+
+# FSM1
+snippet fsm
+	always @( posedge ${1:Clk} ) begin
+		if ( ${2:Rst_I} )
+			${3:s_fsm} <= ${4:sIDLE};
+		else
+			$3 <= ${5:sn_fsm};
+	end
+
+	always @( $3, ) begin
+		$5 <= $3;
+
+		case ( $3 )
+			$4 : begin
+				$5 <= ${6:some_state};
+			end
+		endcase
+	end
+
+
+# assign
+snippet as
+	assign  ${1} = ${2};
+
+# Case statement
+snippet case
+	case (${1:expression})
+	  ${2:choices} : begin
+	    ${3://sequential statement(s)};
+		end
+	  ${4:choice2} : begin
+	    ${5://sequential statement(s)};
+		end
+	endcase
+# If statement
+snippet if
+	if ( ${1:condition} ) begin
+	  ${2://do something};
+	end
+# Else if...
+snippet ei
+	else if ( ${1:condition} ) begin
+	  ${2://do something else};
+	end
+# Else
+snippet el
+	else begin
+	  ${1://do something else};
+	end
